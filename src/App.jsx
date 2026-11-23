@@ -12,6 +12,7 @@ function App() {
   const [jobs, setJobs] = useState(jobsData);
 
   function handleToggleApply(id) {
+    console.log("toggled job id:", id);
     const updated = jobs.map((job) => {
       if (job.id === id) {
         return { ...job, isApplied: !job.isApplied };
