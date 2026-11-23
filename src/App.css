@@ -93,7 +93,7 @@ body {
 .stat-number {
   font-size: 32px;
   font-weight: bold;
-  color: #0f172a;
+  color: #1e5dee;
 }
 
 .home-action {
@@ -190,7 +190,7 @@ body {
 }
 
 .btn-apply {
-  background-color: #16a34a;
+  background-color: #dc2626;
   color: white;
 }
 
