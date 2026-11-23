@@ -10,8 +10,7 @@ function Home({ jobs }) {
     <div className="page home-page">
       <h1>Welcome to Job Portal</h1>
       <p className="intro-text">
-        Find your dream job across top tech companies. Browse fresh openings,
-        filter by work mode, and apply directly.
+        Browse and apply to jobs. Max 3 applications allowed.
       </p>
 
       <div className="stats-container">
@@ -31,11 +30,9 @@ function Home({ jobs }) {
         </div>
       </div>
 
-      <div className="home-action">
-        <Link to="/jobs" className="btn btn-primary">
-          Explore Jobs
-        </Link>
-      </div>
+      <Link to="/jobs" className="btn btn-primary">
+        Explore Jobs
+      </Link>
     </div>
   );
 }
