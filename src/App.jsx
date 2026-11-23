@@ -11,27 +11,14 @@ import "./App.css";
 function App() {
   const [jobs, setJobs] = useState(jobsData);
 
-  // Toggle apply and withdraw
   function handleToggleApply(id) {
-    const currentAppliedCount = jobs.filter((j) => j.isApplied).length;
-    const targetJob = jobs.find((j) => j.id === id);
-
-    // If trying to apply when 3 are already applied, don't allow
-    if (!targetJob.isApplied && currentAppliedCount >= 3) {
-      return;
-    }
-
-    const updatedJobs = jobs.map((job) => {
+    const updated = jobs.map((job) => {
       if (job.id === id) {
-        return {
-          ...job,
-          isApplied: !job.isApplied,
-        };
+        return { ...job, isApplied: !job.isApplied };
       }
       return job;
     });
-
-    setJobs(updatedJobs);
+    setJobs(updated);
   }
 
   const appliedCount = jobs.filter((job) => job.isApplied).length;
@@ -42,24 +29,9 @@ function App() {
       <div className="main-content">
         <Routes>
           <Route path="/" element={<Home jobs={jobs} />} />
-          <Route
-            path="/jobs"
-            element={
-              <Jobs jobs={jobs} onToggleApply={handleToggleApply} />
-            }
-          />
-          <Route
-            path="/jobs/:id"
-            element={
-              <JobDetails jobs={jobs} onToggleApply={handleToggleApply} />
-            }
-          />
-          <Route
-            path="/applied"
-            element={
-              <AppliedJobs jobs={jobs} onToggleApply={handleToggleApply} />
-            }
-          />
+          <Route path="/jobs" element={<Jobs jobs={jobs} onToggleApply={handleToggleApply} />} />
+          <Route path="/jobs/:id" element={<JobDetails jobs={jobs} onToggleApply={handleToggleApply} />} />
+          <Route path="/applied" element={<AppliedJobs jobs={jobs} onToggleApply={handleToggleApply} />} />
         </Routes>
       </div>
     </div>

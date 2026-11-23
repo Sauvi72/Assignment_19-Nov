@@ -40,7 +40,7 @@ function Jobs({ jobs, onToggleApply }) {
         </select>
       </div>
 
-      {/* Jobs grid */}
+      {/* job grid */}
       <div className="job-list">
         {filteredJobs.length === 0 ? (
           <p>No jobs found for this mode.</p>
